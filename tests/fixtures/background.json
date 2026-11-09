@@ -1,0 +1,865 @@
+{
+ "glyphCases": [
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 0,
+   "light": 0.6,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 268.8447947383858,
+    "y": 328.30466783053527,
+    "size": 42.951541850220266,
+    "alpha": 0.09172799999999998,
+    "rotation": 0.8999999999999998,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 0,
+   "light": 0.6,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": -47.745164726559715,
+    "y": 776.2256802605517,
+    "size": 78.94736842105264,
+    "alpha": 0.31626,
+    "rotation": -6.6000000000000005,
+    "sprite": 0
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 0,
+   "light": 0.6,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 254.7235095816354,
+    "y": 553.7561467154391,
+    "size": 226.74418604651163,
+    "alpha": 0.19193999999999994,
+    "rotation": 2.7,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 3.5,
+   "light": 0.4741251641056837,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 276.6787576179899,
+    "y": 283.4823339153338,
+    "size": 53.48978969826274,
+    "alpha": 0.25088937363378677,
+    "rotation": 2.6500000000000004,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 3.5,
+   "light": 0.4741251641056837,
+   "width": 390,
+   "height": 844,
+   "expected": null
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 3.5,
+   "light": 0.4741251641056837,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 210.97898759640066,
+    "y": 440.8756494245461,
+    "size": 45.243619489559165,
+    "alpha": 0.134793266205136,
+    "rotation": 0.44999999999999973,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 11,
+   "light": 0.7950193418353166,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 377.6119028754129,
+    "y": 141.10746599007544,
+    "size": 112.78920308483292,
+    "alpha": 0.3796471995693799,
+    "rotation": 6.4,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 11,
+   "light": 0.7950193418353166,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 65.16084227745785,
+    "y": 587.7026047091558,
+    "size": 40.88050314465409,
+    "alpha": 0.048011804631194865,
+    "rotation": -0.6000000000000005,
+    "sprite": 0
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 11,
+   "light": 0.7950193418353166,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 226.53703416969697,
+    "y": 476.95246567417524,
+    "size": 105.65015479876162,
+    "alpha": 0.37428486866274246,
+    "rotation": 2.057142857142857,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 47.25,
+   "light": 0.40345006152430185,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 369.06877016909846,
+    "y": 150.76884744622168,
+    "size": 117.11711711711715,
+    "alpha": 0.31730512525610116,
+    "rotation": 6.525,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 47.25,
+   "light": 0.40345006152430185,
+   "width": 390,
+   "height": 844,
+   "expected": null
+  },
+  {
+   "theme": "night",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 47.25,
+   "light": 0.40345006152430185,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 204.48034922490424,
+    "y": 460.1702227952908,
+    "size": 52.208835341365486,
+    "alpha": 0.2385022927089951,
+    "rotation": 0.8250000000000011,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 0,
+   "light": 0.75,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 268.8447947383858,
+    "y": 328.30466783053527,
+    "size": 42.951541850220266,
+    "alpha": 0.068796,
+    "rotation": 0.8999999999999998,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 0,
+   "light": 0.75,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": -47.745164726559715,
+    "y": 776.2256802605517,
+    "size": 78.94736842105264,
+    "alpha": 0.237195,
+    "rotation": -6.6000000000000005,
+    "sprite": 0
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 0,
+   "light": 0.75,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 254.7235095816354,
+    "y": 553.7561467154391,
+    "size": 226.74418604651163,
+    "alpha": 0.14395499999999997,
+    "rotation": 2.7,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 3.5,
+   "light": 0.8137764702134505,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 274.9185705013563,
+    "y": 300.8345768066513,
+    "size": 47.64490294556808,
+    "alpha": 0.15095537590452426,
+    "rotation": 1.7749999999999997,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 3.5,
+   "light": 0.8137764702134505,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": -90.38949166979951,
+    "y": 823.4370096622172,
+    "size": 92.67660401814648,
+    "alpha": 0.255771161316859,
+    "rotation": -7.554545454545456,
+    "sprite": 0
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 3.5,
+   "light": 0.8137764702134505,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 212.72269050102457,
+    "y": 453.83228913970504,
+    "size": 39.918116683725685,
+    "alpha": 0.016568953303198457,
+    "rotation": 0.07499999999999973,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 11,
+   "light": 0.8488168233877,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 283.80383651078364,
+    "y": 280.15905531609184,
+    "size": 62.211981566820285,
+    "alpha": 0.22576305347108483,
+    "rotation": 3.65,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 11,
+   "light": 0.8488168233877,
+   "width": 390,
+   "height": 844,
+   "expected": null
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 11,
+   "light": 0.8488168233877,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 204.21299573877064,
+    "y": 439.6969658184578,
+    "size": 53.38287055142746,
+    "alpha": 0.208715862926231,
+    "rotation": 0.8785714285714288,
+    "sprite": 1
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.31,
+    "y": -0.22,
+    "period": 18,
+    "phase": 0.1,
+    "spin": 9,
+    "sway": 1.2,
+    "sprite": 2
+   },
+   "t": 47.25,
+   "light": 0.8496106103213787,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 294.97082515980026,
+    "y": 280.448496900461,
+    "size": 62.852538275584216,
+    "alpha": 0.22689014858568396,
+    "rotation": 3.712500000000001,
+    "sprite": 2
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": -0.6,
+    "y": 0.4,
+    "period": 22,
+    "phase": 0.55,
+    "spin": -12,
+    "sway": 4,
+    "sprite": 0
+   },
+   "t": 47.25,
+   "light": 0.8496106103213787,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": -84.49007966604808,
+    "y": 830.6183191124849,
+    "size": 91.53952843273234,
+    "alpha": 0.2588726210114494,
+    "rotation": -7.486363636363638,
+    "sprite": 0
+   }
+  },
+  {
+   "theme": "lounge",
+   "particle": {
+    "x": 0.05,
+    "y": 0.05,
+    "period": 14,
+    "phase": 0.9,
+    "spin": 3,
+    "sway": 0.4,
+    "sprite": 1
+   },
+   "t": 47.25,
+   "light": 0.8496106103213787,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 223.28296168333986,
+    "y": 477.43439713150286,
+    "size": 84.87486398258974,
+    "alpha": 0.2533702601640058,
+    "rotation": 1.7624999999999997,
+    "sprite": 1
+   }
+  }
+ ],
+ "speckCases": [
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 0,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 123.56347368150159,
+    "y": 675.2,
+    "radius": 2,
+    "alpha": 0.26770828605541075
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 0,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 304.52039065762756,
+    "y": 253.20000000000005,
+    "radius": 3,
+    "alpha": 0.04424351025120295
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 3.5,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 119.97695573800819,
+    "y": 527.5,
+    "radius": 2,
+    "alpha": 0.09872922426303546
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 3.5,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 315.5103437754889,
+    "y": 154.73333333333335,
+    "radius": 3,
+    "alpha": 0.13951301539752273
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 11,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 118.67793590708497,
+    "y": 211,
+    "radius": 2,
+    "alpha": 0.23054368023828567
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 11,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 305.138373072221,
+    "y": 787.7333333333333,
+    "radius": 3,
+    "alpha": 0.16179507459579776
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 47.25,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 113.20760355077279,
+    "y": 369.25,
+    "radius": 2,
+    "alpha": 0.15804156956023946
+   }
+  },
+  {
+   "theme": "night",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 47.25,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 309.3205169798766,
+    "y": 611.9000000000001,
+    "radius": 3,
+    "alpha": 0.11879077566607785
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 0,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 123.56347368150159,
+    "y": 168.8,
+    "radius": 2,
+    "alpha": 0.26770828605541075
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 0,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 304.52039065762756,
+    "y": 590.8,
+    "radius": 3,
+    "alpha": 0.04424351025120295
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 3.5,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 119.97695573800819,
+    "y": 316.5,
+    "radius": 2,
+    "alpha": 0.09872922426303546
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 3.5,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 315.5103437754889,
+    "y": 689.2666666666667,
+    "radius": 3,
+    "alpha": 0.13951301539752273
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 11,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 118.67793590708497,
+    "y": 633,
+    "radius": 2,
+    "alpha": 0.23054368023828567
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 11,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 305.138373072221,
+    "y": 56.26666666666665,
+    "radius": 3,
+    "alpha": 0.16179507459579776
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.3,
+    "phase": 0.2,
+    "period": 20,
+    "size": 2,
+    "wobble": 1
+   },
+   "t": 47.25,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 113.20760355077279,
+    "y": 474.75,
+    "radius": 2,
+    "alpha": 0.15804156956023946
+   }
+  },
+  {
+   "theme": "lounge",
+   "speck": {
+    "x": 0.8,
+    "phase": 0.7,
+    "period": 30,
+    "size": 3,
+    "wobble": 5
+   },
+   "t": 47.25,
+   "width": 390,
+   "height": 844,
+   "expected": {
+    "x": 309.3205169798766,
+    "y": 232.09999999999994,
+    "radius": 3,
+    "alpha": 0.11879077566607785
+   }
+  }
+ ]
+}

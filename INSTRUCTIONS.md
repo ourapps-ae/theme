@@ -1,0 +1,25 @@
+# Theme instructions
+
+## For the agent
+Select `ourapps-ae/theme`; set `themeName` from the recipe's look answer and the two colour settings (written `hex rrggbb`) only when the user gave brand colours. Include the web, Apple and Android parts for the targets the recipe builds. Connect `theme` to every component that requires it (controls, table-layout, card-graphics, chip-graphics, and the host shells).
+
+- Select package `ourapps-ae/theme` version `0.3.0`.
+- Settings to configure:
+  - `themeName` (string, slug; optional; default `night`)
+  - `primaryColour` (string, label; optional)
+  - `tableColour` (string, label; optional)
+- Connect the provided `theme` (ae/theme 1.0.0) to the consumer that needs it.
+- No accounts or keys are needed.
+
+## For the developer
+Supply scene pictures (a backdrop and an optional foreground figure per theme) and load them in your application; pass them to `Background.setScene`, `BackgroundScene` (Swift) or `BackgroundScene` (Kotlin). Add themes in `themes.json`, then run the build script to regenerate `theme.css`, `ThemeTokens.swift` and `ThemeTokens.kt`. Do not edit generated files.
+
+Hosts: pass `colourTable(resolveTheme(file, settings))` as the `colours` option of web-host `renderShell`; pass `ThemeSet.accent` (Swift) as the apple-host `ShellConfiguration.tint`; pass `ThemeSet.palette()` fields to android-host `ShellPalette`.
+
+## How to check
+From the component directory:
+
+- `node --test tests/web.test.ts` (web, required-local; tools: node 26.5.0)
+- `python3 tests/native.py apple` (apple, platform; tools: python3 3.12.8, swiftc 6.4.2)
+- `python3 tests/native.py android` (android, platform; tools: python3 3.12.8, kotlinc 2.2.0, java 26.0.1)
+- `python3.12 -B /Users/george/Projects/com/my/tools/check_component.py components/theme` validates the manifest, sidecars and runs the required-local suite.

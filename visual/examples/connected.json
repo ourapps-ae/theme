@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "theme-connected",
+  "title": "Theme: connected consumer",
+  "status": "example",
+  "view": "component",
+  "focus": "component",
+  "definitions": [
+    {
+      "id": "ourapps-ae.theme",
+      "name": "Theme",
+      "kind": "component",
+      "status": "example",
+      "package": "ourapps-ae/theme",
+      "version": "0.3.0",
+      "ports": [
+        {
+          "id": "theme",
+          "name": "Theme",
+          "direction": "output",
+          "kind": "interface",
+          "type": "ae/theme",
+          "version": "1.0.0"
+        }
+      ],
+      "settings": [
+        {
+          "id": "themeName",
+          "name": "Themename",
+          "type": "string",
+          "required": false,
+          "secret": false,
+          "default": "night"
+        },
+        {
+          "id": "primaryColour",
+          "name": "Primarycolour",
+          "type": "string",
+          "required": false,
+          "secret": false
+        },
+        {
+          "id": "tableColour",
+          "name": "Tablecolour",
+          "type": "string",
+          "required": false,
+          "secret": false
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "name": "Example application consumer",
+      "kind": "application",
+      "status": "example",
+      "revision": "0.1.0",
+      "ports": [
+        {
+          "id": "theme",
+          "name": "Theme",
+          "direction": "input",
+          "kind": "interface",
+          "type": "ae/theme",
+          "version": "1.0.0",
+          "required": true,
+          "cardinality": "one"
+        }
+      ],
+      "settings": []
+    }
+  ],
+  "instances": [
+    {
+      "id": "component",
+      "name": "Theme",
+      "definition": "ourapps-ae.theme",
+      "configuration": {}
+    },
+    {
+      "id": "consumer",
+      "name": "Example consumer",
+      "definition": "consumer",
+      "configuration": {}
+    }
+  ],
+  "connections": [
+    {
+      "source": {
+        "instance": "component",
+        "port": "theme"
+      },
+      "target": {
+        "instance": "consumer",
+        "port": "theme"
+      }
+    }
+  ]
+}

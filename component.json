@@ -1,0 +1,404 @@
+{
+  "format": 1,
+  "kind": "component",
+  "identity": {
+    "name": "ourapps-ae/theme",
+    "version": "0.3.0",
+    "sourceRevision": "19905b75dbea89fbfd424d67fe26c81aaed0e018",
+    "sourceTreeDigest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "licenceStatus": "deferred"
+  },
+  "facilities": [
+    {
+      "id": "theme",
+      "description": "Design tokens and animated background for web, Apple and Android clients"
+    }
+  ],
+  "documents": {
+    "contract": "CONTRACT.md",
+    "interfaces": [
+      "interfaces/theme.json",
+      "suitability.json"
+    ],
+    "examples": [
+      "examples/consumer.ts"
+    ],
+    "licenceNotice": "LICENCE"
+  },
+  "collect": [
+    {
+      "id": "themeName",
+      "type": "string",
+      "grammar": "slug",
+      "required": false,
+      "secret": false,
+      "default": "night"
+    },
+    {
+      "id": "primaryColour",
+      "type": "string",
+      "grammar": "label",
+      "required": false,
+      "secret": false
+    },
+    {
+      "id": "tableColour",
+      "type": "string",
+      "grammar": "label",
+      "required": false,
+      "secret": false
+    }
+  ],
+  "files": [
+    {
+      "path": "CONTRACT.md",
+      "executable": false
+    },
+    {
+      "path": "INSTRUCTIONS.md",
+      "executable": false
+    },
+    {
+      "path": "LICENCE",
+      "executable": false
+    },
+    {
+      "path": "SOURCE.md",
+      "executable": false
+    },
+    {
+      "path": "examples/consumer.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/theme/BackgroundMath.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/theme/ThemeBackground.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/theme/ThemeTokens.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/theme/ThemeTypes.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/BackgroundMath.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/ThemeBackgroundView.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/ThemeTokens.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/ThemeTypes.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/background.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/build-tokens.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/theme.css",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/themes.json",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/tokens.schema.json",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/tokens.ts",
+      "executable": false
+    },
+    {
+      "path": "interfaces/theme.json",
+      "executable": false
+    },
+    {
+      "path": "suitability.json",
+      "executable": false
+    },
+    {
+      "path": "tests/android/Main.kt",
+      "executable": false
+    },
+    {
+      "path": "tests/apple/main.swift",
+      "executable": false
+    },
+    {
+      "path": "tests/fixtures/background.json",
+      "executable": false
+    },
+    {
+      "path": "tests/make-fixtures.ts",
+      "executable": false
+    },
+    {
+      "path": "tests/native.py",
+      "executable": false
+    },
+    {
+      "path": "tests/web.test.ts",
+      "executable": false
+    },
+    {
+      "path": "tools.lock.json",
+      "executable": false
+    },
+    {
+      "path": "visual/definition.json",
+      "executable": false
+    },
+    {
+      "path": "visual/examples/connected.json",
+      "executable": false
+    },
+    {
+      "path": "visual/output/connected.png",
+      "executable": false
+    },
+    {
+      "path": "visual/output/connected.svg",
+      "executable": false
+    },
+    {
+      "path": "visual/output/description.md",
+      "executable": false
+    }
+  ],
+  "artefacts": [
+    {
+      "source": "implementation/android/src/main/java/ae/theme/BackgroundMath.kt",
+      "destination": "components/theme/android/src/main/java/ae/theme/BackgroundMath.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/theme/ThemeBackground.kt",
+      "destination": "components/theme/android/src/main/java/ae/theme/ThemeBackground.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/theme/ThemeTokens.kt",
+      "destination": "components/theme/android/src/main/java/ae/theme/ThemeTokens.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/theme/ThemeTypes.kt",
+      "destination": "components/theme/android/src/main/java/ae/theme/ThemeTypes.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/BackgroundMath.swift",
+      "destination": "components/theme/apple/Sources/BackgroundMath.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/ThemeBackgroundView.swift",
+      "destination": "components/theme/apple/Sources/ThemeBackgroundView.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/ThemeTokens.swift",
+      "destination": "components/theme/apple/Sources/ThemeTokens.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/ThemeTypes.swift",
+      "destination": "components/theme/apple/Sources/ThemeTypes.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/background.ts",
+      "destination": "components/theme/web/background.ts",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/build-tokens.ts",
+      "destination": "components/theme/web/build-tokens.ts",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/theme.css",
+      "destination": "components/theme/web/theme.css",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/themes.json",
+      "destination": "components/theme/web/themes.json",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/tokens.schema.json",
+      "destination": "components/theme/web/tokens.schema.json",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/tokens.ts",
+      "destination": "components/theme/web/tokens.ts",
+      "template": false,
+      "executable": false
+    }
+  ],
+  "dependencies": [],
+  "provides": [
+    {
+      "id": "theme",
+      "type": "ae/theme",
+      "version": "1.0.0",
+      "path": "interfaces/theme.json"
+    }
+  ],
+  "requires": [],
+  "visual": {
+    "definition": "visual/definition.json",
+    "examples": [
+      "visual/examples/connected.json"
+    ],
+    "outputs": [
+      "visual/output/connected.svg",
+      "visual/output/connected.png"
+    ],
+    "descriptions": [
+      "visual/output/description.md"
+    ]
+  },
+  "capabilities": {
+    "hosts": [],
+    "secrets": [],
+    "writes": [
+      "components/theme/android/src/main/java/ae/theme/BackgroundMath.kt",
+      "components/theme/android/src/main/java/ae/theme/ThemeBackground.kt",
+      "components/theme/android/src/main/java/ae/theme/ThemeTokens.kt",
+      "components/theme/android/src/main/java/ae/theme/ThemeTypes.kt",
+      "components/theme/apple/Sources/BackgroundMath.swift",
+      "components/theme/apple/Sources/ThemeBackgroundView.swift",
+      "components/theme/apple/Sources/ThemeTokens.swift",
+      "components/theme/apple/Sources/ThemeTypes.swift",
+      "components/theme/web/background.ts",
+      "components/theme/web/build-tokens.ts",
+      "components/theme/web/theme.css",
+      "components/theme/web/themes.json",
+      "components/theme/web/tokens.schema.json",
+      "components/theme/web/tokens.ts"
+    ]
+  },
+  "infrastructure": {
+    "accounts": [],
+    "costStatus": "unmeasured",
+    "deployedReason": "No deployed service; injected resources and local library functions only."
+  },
+  "verification": [
+    {
+      "id": "web",
+      "root": "package",
+      "argv": [
+        "node",
+        "--test",
+        "tests/web.test.ts"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5.0"
+      },
+      "fixtures": [
+        "tests/fixtures/background.json"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    },
+    {
+      "id": "apple",
+      "root": "package",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "apple"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "python3": "3.12.8",
+        "swiftc": "6.4.2"
+      },
+      "fixtures": [
+        "tests/apple/main.swift"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "platform",
+      "requirements": []
+    },
+    {
+      "id": "android",
+      "root": "package",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "android"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "python3": "3.12.8",
+        "kotlinc": "2.2.0",
+        "java": "26.0.1"
+      },
+      "fixtures": [
+        "tests/android/Main.kt"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "platform",
+      "requirements": []
+    }
+  ],
+  "upgrade": {
+    "policy": "patch",
+    "migration": "files-only"
+  }
+}

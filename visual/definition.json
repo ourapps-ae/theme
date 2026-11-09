@@ -1,0 +1,42 @@
+{
+  "id": "ourapps-ae.theme",
+  "name": "Theme",
+  "kind": "component",
+  "status": "example",
+  "package": "ourapps-ae/theme",
+  "version": "0.3.0",
+  "ports": [
+    {
+      "id": "theme",
+      "name": "Theme",
+      "direction": "output",
+      "kind": "interface",
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": [
+    {
+      "id": "themeName",
+      "name": "Themename",
+      "type": "string",
+      "required": false,
+      "secret": false,
+      "default": "night"
+    },
+    {
+      "id": "primaryColour",
+      "name": "Primarycolour",
+      "type": "string",
+      "required": false,
+      "secret": false
+    },
+    {
+      "id": "tableColour",
+      "name": "Tablecolour",
+      "type": "string",
+      "required": false,
+      "secret": false
+    }
+  ]
+}

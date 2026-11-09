@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ae/theme-tokens/1.0.0",
+  "title": "Design tokens for one theme",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "colour", "spacing", "radii", "type", "background"],
+  "$defs": {
+    "colour": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$", "description": "#rrggbb or #rrggbbaa" },
+    "size": { "type": "number", "minimum": 0 }
+  },
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "colour": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "surface", "edge", "primary", "onPrimary", "table", "tableEdge", "text", "muted", "danger", "good", "warning", "paper", "paperAccent"],
+      "properties": {
+        "background": { "$ref": "#/$defs/colour" },
+        "surface": { "$ref": "#/$defs/colour" },
+        "edge": { "$ref": "#/$defs/colour" },
+        "primary": { "$ref": "#/$defs/colour" },
+        "onPrimary": { "$ref": "#/$defs/colour" },
+        "table": { "$ref": "#/$defs/colour" },
+        "tableEdge": { "$ref": "#/$defs/colour" },
+        "text": { "$ref": "#/$defs/colour" },
+        "muted": { "$ref": "#/$defs/colour" },
+        "danger": { "$ref": "#/$defs/colour" },
+        "good": { "$ref": "#/$defs/colour" },
+        "warning": { "$ref": "#/$defs/colour" },
+        "paper": { "$ref": "#/$defs/colour" },
+        "paperAccent": { "$ref": "#/$defs/colour" }
+      }
+    },
+    "spacing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["xs", "sm", "md", "lg", "xl"],
+      "properties": { "xs": { "$ref": "#/$defs/size" }, "sm": { "$ref": "#/$defs/size" }, "md": { "$ref": "#/$defs/size" }, "lg": { "$ref": "#/$defs/size" }, "xl": { "$ref": "#/$defs/size" } }
+    },
+    "radii": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sm", "md", "lg", "pill"],
+      "properties": { "sm": { "$ref": "#/$defs/size" }, "md": { "$ref": "#/$defs/size" }, "lg": { "$ref": "#/$defs/size" }, "pill": { "$ref": "#/$defs/size" } }
+    },
+    "type": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "caption", "small", "body", "subtitle", "title", "display"],
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "caption": { "$ref": "#/$defs/size" },
+        "small": { "$ref": "#/$defs/size" },
+        "body": { "$ref": "#/$defs/size" },
+        "subtitle": { "$ref": "#/$defs/size" },
+        "title": { "$ref": "#/$defs/size" },
+        "display": { "$ref": "#/$defs/size" }
+      }
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tint", "glow", "glowFromTop", "speed", "suitAlpha", "specks", "speckUp", "speckColour", "glyphs"],
+      "properties": {
+        "tint": { "$ref": "#/$defs/colour" },
+        "glow": { "$ref": "#/$defs/colour" },
+        "glowFromTop": { "type": "boolean" },
+        "speed": { "type": "number", "exclusiveMinimum": 0 },
+        "suitAlpha": { "type": "number", "minimum": 0, "maximum": 1 },
+        "specks": { "type": "integer", "minimum": 0, "maximum": 120 },
+        "speckUp": { "type": "boolean" },
+        "speckColour": { "$ref": "#/$defs/colour" },
+        "glyphs": { "type": "string", "minLength": 1, "maxLength": 8, "description": "characters that drift toward the viewer" }
+      }
+    }
+  }
+}

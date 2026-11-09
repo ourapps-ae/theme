@@ -1,0 +1,134 @@
+{
+  "name": "theme",
+  "version": "0.3.0",
+  "title": "Theme",
+  "description": "Design tokens (colours, spacing, radii, type scale, animated background style) as one JSON shape rendered to CSS variables, Swift constants and Kotlin constants, plus the animated background.",
+  "facilities": [
+    {
+      "id": "theme",
+      "description": "Design tokens and animated background for web, Apple and Android clients"
+    }
+  ],
+  "provides": [
+    {
+      "id": "theme",
+      "type": "ae/theme",
+      "version": "1.0.0",
+      "path": "interfaces/theme.json"
+    }
+  ],
+  "requires": [],
+  "collect": [
+    {
+      "id": "themeName",
+      "type": "string",
+      "grammar": "slug",
+      "required": false,
+      "secret": false,
+      "default": "night"
+    },
+    {
+      "id": "primaryColour",
+      "type": "string",
+      "grammar": "label",
+      "required": false,
+      "secret": false
+    },
+    {
+      "id": "tableColour",
+      "type": "string",
+      "grammar": "label",
+      "required": false,
+      "secret": false
+    }
+  ],
+  "dependencies": [],
+  "suites": [
+    {
+      "id": "web",
+      "argv": [
+        "node",
+        "--test",
+        "tests/web.test.ts"
+      ],
+      "scope": "required-local",
+      "tools": {
+        "node": "26.5.0"
+      }
+    },
+    {
+      "id": "apple",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "apple"
+      ],
+      "scope": "platform",
+      "fixtures": [
+        "tests/apple/main.swift"
+      ],
+      "tools": {
+        "python3": "3.12.8",
+        "swiftc": "6.4.2"
+      }
+    },
+    {
+      "id": "android",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "android"
+      ],
+      "scope": "platform",
+      "fixtures": [
+        "tests/android/Main.kt"
+      ],
+      "tools": {
+        "python3": "3.12.8",
+        "kotlinc": "2.2.0",
+        "java": "26.0.1"
+      }
+    }
+  ],
+  "tools": {
+    "node": "26.5.0",
+    "python3": "3.12.8",
+    "swiftc": "6.4.2",
+    "kotlinc": "2.2.0",
+    "java": "26.0.1"
+  },
+  "platforms": [
+    "web",
+    "apple",
+    "android"
+  ],
+  "text": {
+    "purpose": "`theme` holds the look of an application as data: colours, spacing, corner radii, a type scale and the style of an animated background (glyphs drifting out of the dark under a glow, with specks, a scene picture behind and figures in front). One `themes.json` renders to CSS variables for the web, Swift constants for Apple and Kotlin constants for Android, so the three clients cannot drift apart. Colours are `#rrggbb` or `#rrggbbaa`.",
+    "userInputs": "`themeName` selects a theme from `themes.json` (shipped: `night`, a dark room with a warm glow rising from below; `lounge`, a slower, softer look with the glow from above). An unknown name falls back to the default. `primaryColour` and `tableColour` are optional colours that replace the theme's primary (buttons, headings, highlights) and table (playing surface) colours; empty means the theme's own. An aepm string setting cannot hold `#` and must start with a letter, so a colour is written `hex e0b35a` (six digits, or eight with opacity); code may also pass `#e0b35a`. The settings are strings with the `label` grammar; a malformed colour is refused. Scene pictures and figures are supplied by the application at run time, not by this package.",
+    "integration": "Web: import `resolveTheme` and `applyTheme` from `web/tokens.ts`, apply the result to `document.documentElement`, link `web/theme.css` for the shipped themes (`:root` is the default theme, `[data-theme=name]` the others), and construct `Background` from `web/background.ts` on a full-screen canvas with `setScene` for pictures. Apple: compile `ThemeTypes.swift`, `ThemeTokens.swift`, `BackgroundMath.swift` anywhere, and `ThemeBackgroundView.swift` in UIKit targets (iOS, tvOS, Mac Catalyst); read colours as `ThemeSet.named(name).resolved(primary:table:)` and `Color(themeColour)`. Android: add the three Kotlin files and `ThemeBackground.kt` to a Compose module; `ThemeSet.named(name).resolved(...)`. To change a look, edit `themes.json` and run `node web/build-tokens.ts themes.json --css DIR --swift DIR --kotlin DIR` to regenerate the three outputs; `tokens.schema.json` documents the shape and `validateTokens` enforces it. Other components (`controls`, `table-layout`, `card-graphics`, `chip-graphics`) read colours from these tokens.",
+    "infrastructure": "None. Pure data, local rendering and on-device drawing. No accounts, network or deployment.",
+    "verification": "Node tests check the token shape against the schema, overrides, CSS variable rendering, that the committed generated CSS, Swift and Kotlin equal what the renderers produce, and the background placement maths (visibility, fade, growth, figure boxes). The Apple check compiles the pure Swift files for macOS and runs `tests/apple/main.swift`, which compares every generated colour with `themes.json` and every glyph and speck frame with frames the TypeScript produced (`tests/fixtures/background.json`), then type-checks all Swift against the iOS simulator SDK. The Android check compiles the pure Kotlin files and runs `tests/android/Main.kt`; it needs kotlinc, which was not available where this was written, so it has not been run. Compose drawing (`ThemeBackground.kt`) is not compiled by any check here. No pixel output is compared.",
+    "scenarios": "A recipe picks `lounge` for a home-games look and sets `primaryColour` to its brand colour; every client shows the same colours. A recipe with no scene pictures still gets the animated glyphs and specks. A new look is added by appending a theme to `themes.json` and regenerating.",
+    "updates": "Patch updates replace files only. Regenerate the CSS, Swift and Kotlin outputs after any change to `themes.json`. The component keeps no data; removal deletes its files and the generated outputs."
+  },
+  "agentInstructions": "Select `ourapps-ae/theme`; set `themeName` from the recipe's look answer and the two colour settings (written `hex rrggbb`) only when the user gave brand colours. Include the web, Apple and Android parts for the targets the recipe builds. Connect `theme` to every component that requires it (controls, table-layout, card-graphics, chip-graphics, and the host shells).",
+  "developerInstructions": "Supply scene pictures (a backdrop and an optional foreground figure per theme) and load them in your application; pass them to `Background.setScene`, `BackgroundScene` (Swift) or `BackgroundScene` (Kotlin). Add themes in `themes.json`, then run the build script to regenerate `theme.css`, `ThemeTokens.swift` and `ThemeTokens.kt`. Do not edit generated files.",
+  "suitability": {
+    "format": 1,
+    "jobs": [
+      "theme"
+    ],
+    "profiles": [
+      {
+        "id": "any",
+        "load": {},
+        "cost": "none",
+        "regions": [
+          "any"
+        ],
+        "compliance": []
+      }
+    ],
+    "notes": "Pure library; no provider limits apply."
+  }
+}
