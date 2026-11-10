@@ -3,12 +3,12 @@
 ## For the agent
 Select `ourapps-ae/theme`; set `themeName` from the recipe's look answer and the two colour settings (written `hex rrggbb`) only when the user gave brand colours. Include the web, Apple and Android parts for the targets the recipe builds. Connect `theme` to every component that requires it (controls, table-layout, card-graphics, chip-graphics, and the host shells).
 
-- Select package `ourapps-ae/theme` version `0.3.0`.
+- Select package `ourapps-ae/theme` version `0.4.0`.
 - Settings to configure:
   - `themeName` (string, slug; optional; default `night`)
   - `primaryColour` (string, label; optional)
   - `tableColour` (string, label; optional)
-- Connect the provided `theme` (ae/theme 1.0.0) to the consumer that needs it.
+- Connect the provided `theme` (ae/theme 1.0.0, OpenRPC 1.3.2 document `interfaces/theme.json`) to the consumer that needs it.
 - No accounts or keys are needed.
 
 ## For the developer

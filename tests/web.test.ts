@@ -21,6 +21,22 @@ test("the shipped themes match the token schema", () => {
   assert.deepEqual(Object.keys(schema.properties.type.properties).sort(), Object.keys(night.type).sort());
 });
 
+test("the OpenRPC interface describes the token shape and the exported operations", async () => {
+  const doc = JSON.parse(read("../interfaces/theme.json"));
+  assert.equal(doc.openrpc, "1.3.2");
+  assert.deepEqual([doc.info.title, doc.info.version], ["ae/theme", "1.0.0"]);
+  const { Tokens, BackgroundStyle, Colour } = doc.components.schemas;
+  const schema = JSON.parse(read("../implementation/web/tokens.schema.json"));
+  assert.deepEqual(Tokens.required, schema.required);
+  assert.deepEqual(Tokens.properties.colour.required, [...COLOUR_NAMES]);
+  assert.deepEqual(Object.keys(Tokens.properties.type.properties), Object.keys(schema.properties.type.properties));
+  assert.deepEqual(BackgroundStyle.required, schema.properties.background.required);
+  assert.equal(BackgroundStyle.properties.specks.type, "integer");
+  assert.equal(Colour.pattern, schema.$defs.colour.pattern);
+  const modules = { ...(await import("../implementation/web/tokens.ts")), ...(await import("../implementation/web/background.ts")), ...(await import("../implementation/web/build-tokens.ts")) };
+  for (const method of doc.methods) assert.equal(typeof modules[method.name.split(".")[0]], "function", method.name);
+});
+
 test("invalid tokens are reported one by one", () => {
   const bad = JSON.parse(JSON.stringify(night));
   bad.colour.primary = "gold";
