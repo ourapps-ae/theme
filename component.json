@@ -61,6 +61,12 @@
       "template": false
     },
     {
+      "destination": "components/theme/web/package.json",
+      "executable": false,
+      "source": "implementation/web/package.json",
+      "template": false
+    },
+    {
       "destination": "components/theme/web/theme.css",
       "executable": false,
       "source": "implementation/web/theme.css",
@@ -99,6 +105,7 @@
       "components/theme/apple/Sources/ThemeTypes.swift",
       "components/theme/web/background.ts",
       "components/theme/web/build-tokens.ts",
+      "components/theme/web/package.json",
       "components/theme/web/theme.css",
       "components/theme/web/themes.json",
       "components/theme/web/tokens.schema.json",
@@ -211,6 +218,10 @@
     {
       "executable": false,
       "path": "implementation/web/build-tokens.ts"
+    },
+    {
+      "executable": false,
+      "path": "implementation/web/package.json"
     },
     {
       "executable": false,

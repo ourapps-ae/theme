@@ -24,6 +24,7 @@ Facilities: `theme` (Design tokens and animated background for web, Apple and An
 - `implementation/apple/Sources/ThemeTokens.swift` -> `components/theme/apple/Sources/ThemeTokens.swift`
 - `implementation/apple/Sources/ThemeTypes.swift` -> `components/theme/apple/Sources/ThemeTypes.swift`
 - `implementation/web/background.ts` -> `components/theme/web/background.ts`
+- `implementation/web/package.json` -> `components/theme/web/package.json` (marks the folder's modules as ES modules, for build tools that load `tokens.ts`)
 - `implementation/web/build-tokens.ts` -> `components/theme/web/build-tokens.ts`
 - `implementation/web/theme.css` -> `components/theme/web/theme.css`
 - `implementation/web/themes.json` -> `components/theme/web/themes.json`
