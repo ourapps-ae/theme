@@ -31,7 +31,7 @@ Facilities: `theme` (Design tokens and animated background for web, Apple and An
 - `implementation/web/tokens.ts` -> `components/theme/web/tokens.ts`
 
 Dependencies: none.
-`tools.lock.json` pins verification tools: node 26.5.0, python3 3.12.8, swiftc 6.4.2, kotlinc 2.2.0, java 26.0.1. Licence wording remains deferred.
+`tools.lock.json` pins verification tools: node 26.5, python3 3.12, swiftc 6.4, kotlinc 2.2, java 26.0. Licence wording remains deferred.
 
 ## Provided interfaces
 - `interfaces/theme.json` defines `theme` (ae/theme) version 1.0.0 as an OpenRPC 1.3.2 document: one method per web function (`tokens.ts`, `background.ts`, `build-tokens.ts`), each description naming the Swift and Kotlin form, and the token shape (`Tokens`, `BackgroundStyle`, `ThemeFile`, `ThemeSettings`, the host views) as JSON Schema 2020-12 under `components.schemas`. Host views the shells read: `colourTable` (every colour name to `#rrggbb`, for web-host `themeColour` and `backgroundColour`), `accentColour` and Swift `ThemeSet.accent` (apple-host tint), `shellPalette` and Kotlin `ThemeSet.palette()` (android-host `ShellPalette`; the secondary colour is the table colour). Colours resolve first, so the host settings and the installer overrides agree.
@@ -51,9 +51,9 @@ None. Pure data, local rendering and on-device drawing. No accounts, network or 
 ## Verification
 Node tests check the token shape against the schema, that the OpenRPC interface's token schemas agree with `tokens.schema.json` and that every method it lists is an exported web function, overrides, CSS variable rendering, that the committed generated CSS, Swift and Kotlin equal what the renderers produce, and the background placement maths (visibility, fade, growth, figure boxes). The Apple check compiles the pure Swift files for macOS and runs `tests/apple/main.swift`, which compares every generated colour with `themes.json` and every glyph and speck frame with frames the TypeScript produced (`tests/fixtures/background.json`), then type-checks all Swift against the iOS simulator SDK. The Android check compiles the pure Kotlin files and runs `tests/android/Main.kt`; it needs kotlinc, which was not available where this was written, so it has not been run. Compose drawing (`ThemeBackground.kt`) is not compiled by any check here. No pixel output is compared.
 
-- `node --test tests/web.test.ts` (web, required-local; tools: node 26.5.0)
-- `python3 tests/native.py apple` (apple, platform; tools: python3 3.12.8, swiftc 6.4.2)
-- `python3 tests/native.py android` (android, platform; tools: python3 3.12.8, kotlinc 2.2.0, java 26.0.1)
+- `node --test tests/web.test.ts` (web, required-local; tools: node 26.5)
+- `python3 tests/native.py apple` (apple, platform; tools: python3 3.12, swiftc 6.4)
+- `python3 tests/native.py android` (android, platform; tools: python3 3.12, kotlinc 2.2, java 26.0)
 
 ## Scenarios and presentation
 A recipe picks `lounge` for a home-games look and sets `primaryColour` to its brand colour; every client shows the same colours. A recipe with no scene pictures still gets the animated glyphs and specks. A new look is added by appending a theme to `themes.json` and regenerating.
