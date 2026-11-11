@@ -14,7 +14,7 @@ Select `ourapps-ae/theme`; set `themeName` from the recipe's look answer and the
 ## For the developer
 Supply scene pictures (a backdrop and an optional foreground figure per theme) and load them in your application; pass them to `Background.setScene`, `BackgroundScene` (Swift) or `BackgroundScene` (Kotlin). Add themes in `themes.json`, then run the build script to regenerate `theme.css`, `ThemeTokens.swift` and `ThemeTokens.kt`. Do not edit generated files.
 
-Hosts: pass `colourTable(resolveTheme(file, settings))` as the `colours` option of web-host `renderShell`; pass `ThemeSet.accent` (Swift) as the apple-host `ShellConfiguration.tint`; pass `ThemeSet.palette()` fields to android-host `ShellPalette`.
+Hosts: pass `colourTable(resolveTheme(file, settings))` as the `colours` option of web-host `webHostConfig`; pass `ThemeSet.accent` (Swift) as the apple-host `ShellConfiguration.tint`; pass `ThemeSet.palette()` fields to android-host `ShellPalette`.
 
 ## How to check
 From the component directory:
