@@ -100,7 +100,8 @@
   "platforms": [
     "web",
     "apple",
-    "android"
+    "android",
+    "server"
   ],
   "text": {
     "purpose": "`theme` holds the look of an application as data: colours, spacing, corner radii, a type scale and the style of an animated background (glyphs drifting out of the dark under a glow, with specks, a scene picture behind and figures in front). One `themes.json` renders to CSS variables for the web, Swift constants for Apple and Kotlin constants for Android, so the three clients cannot drift apart. Colours are `#rrggbb` or `#rrggbbaa`.",

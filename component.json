@@ -49,6 +49,12 @@
       "template": false
     },
     {
+      "destination": "components/theme/server/index.ts",
+      "executable": false,
+      "source": "implementation/server/index.ts",
+      "template": false
+    },
+    {
       "destination": "components/theme/web/background.ts",
       "executable": false,
       "source": "implementation/web/background.ts",
@@ -58,6 +64,12 @@
       "destination": "components/theme/web/build-tokens.ts",
       "executable": false,
       "source": "implementation/web/build-tokens.ts",
+      "template": false
+    },
+    {
+      "destination": "components/theme/web/index.ts",
+      "executable": false,
+      "source": "implementation/web/index.ts",
       "template": false
     },
     {
@@ -103,8 +115,10 @@
       "components/theme/apple/Sources/ThemeBackgroundView.swift",
       "components/theme/apple/Sources/ThemeTokens.swift",
       "components/theme/apple/Sources/ThemeTypes.swift",
+      "components/theme/server/index.ts",
       "components/theme/web/background.ts",
       "components/theme/web/build-tokens.ts",
+      "components/theme/web/index.ts",
       "components/theme/web/package.json",
       "components/theme/web/theme.css",
       "components/theme/web/themes.json",
@@ -213,11 +227,19 @@
     },
     {
       "executable": false,
+      "path": "implementation/server/index.ts"
+    },
+    {
+      "executable": false,
       "path": "implementation/web/background.ts"
     },
     {
       "executable": false,
       "path": "implementation/web/build-tokens.ts"
+    },
+    {
+      "executable": false,
+      "path": "implementation/web/index.ts"
     },
     {
       "executable": false,
