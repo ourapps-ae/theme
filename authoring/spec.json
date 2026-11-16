@@ -1,6 +1,6 @@
 {
   "name": "theme",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "title": "Theme",
   "description": "Design tokens (colours, spacing, radii, type scale, animated background style) as one JSON shape rendered to CSS variables, Swift constants and Kotlin constants, plus the animated background.",
   "facilities": [
@@ -98,10 +98,10 @@
     "java": "26.0.1"
   },
   "platforms": [
-    "web",
-    "apple",
     "android",
-    "server"
+    "apple",
+    "server",
+    "web"
   ],
   "text": {
     "purpose": "`theme` holds the look of an application as data: colours, spacing, corner radii, a type scale and the style of an animated background (glyphs drifting out of the dark under a glow, with specks, a scene picture behind and figures in front). One `themes.json` renders to CSS variables for the web, Swift constants for Apple and Kotlin constants for Android, so the three clients cannot drift apart. Colours are `#rrggbb` or `#rrggbbaa`.",
@@ -131,5 +131,279 @@
       }
     ],
     "notes": "Pure library; no provider limits apply."
+  },
+  "classes": [
+    {
+      "reference": {
+        "name": "ourapps-ae/theme-class",
+        "version": "1.0.0",
+        "digest": "e94b891e0579769d2c3498cfb963c9084db328dd346ff686315f132b70902956"
+      },
+      "descriptor": {
+        "format": 1,
+        "name": "ourapps-ae/theme-class",
+        "version": "1.0.0",
+        "provides": [
+          {
+            "type": "ae/theme",
+            "version": "1.0.0",
+            "path": "classes/theme-class/theme.json",
+            "modules": {
+              "web": [
+                "web/index.ts"
+              ],
+              "server": [
+                "server/index.ts"
+              ],
+              "android": [
+                "android/src/main/java"
+              ],
+              "ios": [
+                "apple/Sources"
+              ],
+              "macos": [
+                "apple/Sources"
+              ],
+              "tvos": [
+                "apple/Sources"
+              ],
+              "windows": [
+                "web/index.ts"
+              ]
+            }
+          }
+        ],
+        "requires": [],
+        "settings": {
+          "type": "object",
+          "properties": {
+            "themeName": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,63}$"
+            },
+            "primaryColour": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+            },
+            "tableColour": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+            }
+          },
+          "required": [
+            "themeName"
+          ],
+          "additionalProperties": false
+        },
+        "inventory": [
+          {
+            "path": "classes/theme-class/apple.mjs",
+            "digest": "a788e32728ba9abff66b7b38b0e936b975ae5efd02fcf33f839937991d8c0d82"
+          },
+          {
+            "path": "classes/theme-class/check.mjs",
+            "digest": "0055a1d893a0600f7b713866218412b69516f526c0f8fdb85be70c80201470c2"
+          },
+          {
+            "path": "classes/theme-class/main.swift",
+            "digest": "d9b46e513962142b2f188779f120fbd98a4a5cd959f8c67cf3b3f456551fb81a"
+          },
+          {
+            "path": "classes/theme-class/runtime.mjs",
+            "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+          },
+          {
+            "path": "classes/theme-class/theme.json",
+            "digest": "fc9cb9d907ad9c5e2fc7cfa888c744b16dbdbfde5714b744807bdc2cd78ce078"
+          }
+        ],
+        "verification": [
+          {
+            "id": "apple-values",
+            "root": "package",
+            "argv": [
+              "node",
+              "classes/theme-class/apple.mjs"
+            ],
+            "cwd": ".",
+            "prepare": [],
+            "tools": {
+              "node": "26.5",
+              "swiftc": "6.4"
+            },
+            "fixtures": [
+              "classes/theme-class/apple.mjs",
+              "classes/theme-class/main.swift"
+            ],
+            "locks": [],
+            "network": false,
+            "timeoutSeconds": 120,
+            "expectedExit": 0,
+            "scope": "required-local",
+            "requirements": []
+          },
+          {
+            "id": "shared",
+            "root": "package",
+            "argv": [
+              "node",
+              "classes/theme-class/check.mjs"
+            ],
+            "cwd": ".",
+            "prepare": [],
+            "tools": {
+              "node": "26.5"
+            },
+            "fixtures": [
+              "classes/theme-class/check.mjs"
+            ],
+            "locks": [],
+            "network": false,
+            "timeoutSeconds": 60,
+            "expectedExit": 0,
+            "scope": "required-local",
+            "requirements": []
+          }
+        ]
+      }
+    }
+  ],
+  "implements": [
+    {
+      "name": "ourapps-ae/theme-class",
+      "version": "1.0.0",
+      "digest": "e94b891e0579769d2c3498cfb963c9084db328dd346ff686315f132b70902956"
+    }
+  ],
+  "upstream": [],
+  "compatibility": {
+    "runtimes": {
+      "node": ">=26.5.0 <27.0.0",
+      "swift": "=6.4.2",
+      "ios": ">=17.0.0",
+      "macos": ">=14.0.0",
+      "tvos": ">=17.0.0",
+      "kotlin": "=2.3.20",
+      "java": ">=17.0.0 <27.0.0",
+      "android": ">=8.0.0"
+    },
+    "frameworks": {
+      "android-ui": {
+        "name": "androidx.compose.ui",
+        "range": "=1.10.0"
+      }
+    },
+    "dependencies": [
+      {
+        "name": "pkg:maven/androidx.compose.ui/ui",
+        "version": "1.10.0",
+        "isolation": "shared"
+      },
+      {
+        "name": "pkg:maven/androidx.compose.material3/material3",
+        "version": "1.4.0",
+        "isolation": "shared"
+      }
+    ],
+    "styles": {
+      "scope": "global",
+      "namespaces": [
+        ":root::--background",
+        ":root::--danger",
+        ":root::--edge",
+        ":root::--font-body",
+        ":root::--font-caption",
+        ":root::--font-display",
+        ":root::--font-family",
+        ":root::--font-small",
+        ":root::--font-subtitle",
+        ":root::--font-title",
+        ":root::--glow",
+        ":root::--good",
+        ":root::--muted",
+        ":root::--on-primary",
+        ":root::--paper",
+        ":root::--paper-accent",
+        ":root::--primary",
+        ":root::--radius-lg",
+        ":root::--radius-md",
+        ":root::--radius-pill",
+        ":root::--radius-sm",
+        ":root::--space-lg",
+        ":root::--space-md",
+        ":root::--space-sm",
+        ":root::--space-xl",
+        ":root::--space-xs",
+        ":root::--surface",
+        ":root::--table",
+        ":root::--table-edge",
+        ":root::--text",
+        ":root::--tint",
+        ":root::--warning",
+        "[data-theme=\"lounge\"]::--background",
+        "[data-theme=\"lounge\"]::--danger",
+        "[data-theme=\"lounge\"]::--edge",
+        "[data-theme=\"lounge\"]::--font-body",
+        "[data-theme=\"lounge\"]::--font-caption",
+        "[data-theme=\"lounge\"]::--font-display",
+        "[data-theme=\"lounge\"]::--font-family",
+        "[data-theme=\"lounge\"]::--font-small",
+        "[data-theme=\"lounge\"]::--font-subtitle",
+        "[data-theme=\"lounge\"]::--font-title",
+        "[data-theme=\"lounge\"]::--glow",
+        "[data-theme=\"lounge\"]::--good",
+        "[data-theme=\"lounge\"]::--muted",
+        "[data-theme=\"lounge\"]::--on-primary",
+        "[data-theme=\"lounge\"]::--paper",
+        "[data-theme=\"lounge\"]::--paper-accent",
+        "[data-theme=\"lounge\"]::--primary",
+        "[data-theme=\"lounge\"]::--radius-lg",
+        "[data-theme=\"lounge\"]::--radius-md",
+        "[data-theme=\"lounge\"]::--radius-pill",
+        "[data-theme=\"lounge\"]::--radius-sm",
+        "[data-theme=\"lounge\"]::--space-lg",
+        "[data-theme=\"lounge\"]::--space-md",
+        "[data-theme=\"lounge\"]::--space-sm",
+        "[data-theme=\"lounge\"]::--space-xl",
+        "[data-theme=\"lounge\"]::--space-xs",
+        "[data-theme=\"lounge\"]::--surface",
+        "[data-theme=\"lounge\"]::--table",
+        "[data-theme=\"lounge\"]::--table-edge",
+        "[data-theme=\"lounge\"]::--text",
+        "[data-theme=\"lounge\"]::--tint",
+        "[data-theme=\"lounge\"]::--warning"
+      ],
+      "conflicts": []
+    }
+  },
+  "maintenance": {
+    "owners": [
+      "Level N Ltd"
+    ],
+    "contact": "https://github.com/ourapps-ae/theme/issues",
+    "repository": "https://github.com/ourapps-ae/theme",
+    "updates": {
+      "source": "https://github.com/ourapps-ae/theme/releases",
+      "strategy": "manual"
+    }
+  },
+  "supportedPlatforms": [
+    "android",
+    "ios",
+    "macos",
+    "server",
+    "tvos",
+    "web",
+    "windows"
+  ],
+  "licence": "Apache-2.0",
+  "licenceFile": "LICENCE",
+  "noticeFile": "NOTICE",
+  "templates": [],
+  "modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts",
+    "android": "android/src/main/java",
+    "apple": "apple/Sources"
   }
 }

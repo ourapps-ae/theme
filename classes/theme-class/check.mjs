@@ -1,0 +1,38 @@
+import { assert, load } from './runtime.mjs';
+const m = await load('server/index.ts');
+const original = JSON.stringify(m.themes);
+assert.equal(m.themes.format, 1);
+assert.ok(m.themes.themes.length > 0);
+assert.equal(new Set(m.themes.themes.map(theme => theme.name)).size, m.themes.themes.length);
+assert.ok(m.themes.themes.some(theme => theme.name === m.themes.default));
+assert.deepEqual(m.themeNames(m.themes), m.themes.themes.map(theme => theme.name));
+for (const theme of m.themes.themes) {
+  assert.deepEqual(m.validateTokens(theme), []);
+  assert.deepEqual(m.resolveTheme(m.themes, { themeName: theme.name }), theme);
+}
+const base = m.resolveTheme(m.themes);
+assert.deepEqual(m.validateTokens(base), []);
+for (const key of ['background', 'surface', 'primary', 'text', 'table', 'danger']) assert.match(base.colour[key], /^#[\da-f]{6}([\da-f]{2})?$/i);
+assert.deepEqual(m.resolveTheme(m.themes, { themeName: 'missing-theme' }), base);
+const changed = m.resolveTheme(m.themes, { primaryColour: 'hex 123456', tableColour: 'hex ABCDEF' });
+assert.equal(changed.colour.primary, '#123456');
+assert.equal(changed.colour.table, '#abcdef');
+assert.equal(m.cssVariables(changed)['--primary'], '#123456');
+assert.equal(m.shellPalette(changed).primary, 0xff123456);
+assert.equal(JSON.stringify(m.themes), original);
+changed.spacing.md++;
+assert.deepEqual(m.resolveTheme(m.themes), base);
+assert.throws(() => m.resolveTheme(m.themes, { primaryColour: 'invalid' }));
+assert.throws(() => m.resolveTheme({ format: 1, default: 'none', themes: [] }));
+assert.ok(m.validateTokens({ ...base, colour: {} }).length > 0);
+assert.deepEqual(m.parseColour('#12345680'), { r: 18, g: 52, b: 86, a: 128 / 255 });
+assert.equal(m.accentColour(base), base.colour.primary.slice(0, 7));
+const rendered = m.renderCss(m.themes);
+assert.equal(m.renderCss(m.themes), rendered);
+assert.match(rendered, /:root\s*\{/);
+assert.match(rendered, /--primary:/);
+for (const render of [m.renderSwift, m.renderKotlin]) assert.equal(render(m.themes), render(m.themes));
+const assigned = {};
+m.applyTheme(base, { style: { setProperty: (key, value) => { assigned[key] = value; } } });
+assert.deepEqual(assigned, m.cssVariables(base));
+assert.equal(assigned['--primary'], base.colour.primary.toLowerCase());
