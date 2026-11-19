@@ -1,6 +1,6 @@
 {
   "name": "theme",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "title": "Theme",
   "description": "Design tokens (colours, spacing, radii, type scale, animated background style) as one JSON shape rendered to CSS variables, Swift constants and Kotlin constants, plus the animated background.",
   "facilities": [
@@ -69,7 +69,8 @@
       ],
       "tools": {
         "python3": "3.12.8",
-        "swiftc": "6.4.2"
+        "swiftc": "6.4.2",
+        "xcrun": "72"
       }
     },
     {
