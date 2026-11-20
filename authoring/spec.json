@@ -1,6 +1,6 @@
 {
   "name": "theme",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "title": "Theme",
   "description": "Design tokens (colours, spacing, radii, type scale, animated background style) as one JSON shape rendered to CSS variables, Swift constants and Kotlin constants, plus the animated background.",
   "facilities": [
@@ -137,13 +137,17 @@
     {
       "reference": {
         "name": "ourapps-ae/theme-class",
-        "version": "1.0.0",
-        "digest": "e94b891e0579769d2c3498cfb963c9084db328dd346ff686315f132b70902956"
+        "version": "1.1.0",
+        "digest": "6f3e3e9cb48181e97792618b6126aa559462372f29e342a9a93f3b3fab928afe"
       },
       "descriptor": {
-        "format": 1,
+        "format": 2,
         "name": "ourapps-ae/theme-class",
-        "version": "1.0.0",
+        "version": "1.1.0",
+        "title": "Theme",
+        "summary": "Colours, spacing, type and an animated background for every client",
+        "category": "presentation/design-tokens",
+        "presentation": "visual",
         "provides": [
           {
             "type": "ae/theme",
@@ -272,8 +276,8 @@
   "implements": [
     {
       "name": "ourapps-ae/theme-class",
-      "version": "1.0.0",
-      "digest": "e94b891e0579769d2c3498cfb963c9084db328dd346ff686315f132b70902956"
+      "version": "1.1.0",
+      "digest": "6f3e3e9cb48181e97792618b6126aa559462372f29e342a9a93f3b3fab928afe"
     }
   ],
   "upstream": [],
@@ -284,7 +288,7 @@
       "ios": ">=17.0.0",
       "macos": ">=14.0.0",
       "tvos": ">=17.0.0",
-      "kotlin": "=2.3.20",
+      "kotlin": "=2.4.21",
       "java": ">=17.0.0 <27.0.0",
       "android": ">=8.0.0"
     },
@@ -640,5 +644,40 @@
         "manual": "Without the package manager, install Node 26 from nodejs.org (the installer, or the zip or tar archive with its folder put first on PATH); on Linux also from the NodeSource repository."
       }
     ]
-  }
+  },
+  "release": {
+    "channel": "features",
+    "fixes": []
+  },
+  "images": [
+    {
+      "caption": "The night look: colours, actions and table over its animated background",
+      "height": 800,
+      "path": "images/night-sample.png",
+      "platform": "web",
+      "width": 1280
+    },
+    {
+      "caption": "The night look's animated background on its own",
+      "height": 720,
+      "path": "images/night-background.png",
+      "platform": "web",
+      "width": 1280
+    },
+    {
+      "caption": "The lounge look: colours, actions and table over its animated background",
+      "height": 800,
+      "path": "images/lounge-sample.png",
+      "platform": "web",
+      "width": 1280
+    },
+    {
+      "caption": "The lounge look's animated background on its own",
+      "height": 720,
+      "path": "images/lounge-background.png",
+      "platform": "web",
+      "width": 1280
+    }
+  ],
+  "vulnerabilityWaivers": []
 }
