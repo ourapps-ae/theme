@@ -1544,7 +1544,7 @@
       }
     }
   },
-  "x-ourapps-modules": {
+  "x-clodhub-modules": {
     "web": "web/index.ts",
     "server": "server/index.ts",
     "android": "android/src/main/java",
