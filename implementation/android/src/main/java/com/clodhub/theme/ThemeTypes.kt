@@ -1,4 +1,4 @@
-package ae.theme
+package com.clodhub.theme
 
 // The token shapes ThemeTokens.kt (generated from themes.json) fills in. Colours are 0xAARRGGBB
 // Longs, so the values can be read and tested without Compose; ThemeBackground.kt turns them into Colors.
@@ -42,7 +42,7 @@ data class ThemeSet(
     }
 }
 
-// An installer colour: "hex e0b35a" (an aepm string setting cannot hold "#" and starts with a
+// An installer colour: "hex e0b35a" (a clod string setting cannot hold "#" and starts with a
 // letter), "#rrggbb", "rrggbb", each optionally with two more digits of opacity; null for anything else.
 fun parseColourSetting(value: String): Long? {
     var text = value.trim()

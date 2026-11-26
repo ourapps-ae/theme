@@ -5,10 +5,10 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { assert, load, manifest, source } from './runtime.mjs';
 
-const descriptor = manifest.classes.find(item => item.reference.digest === process.env.AEPM_CLASS_DIGEST).descriptor;
+const descriptor = manifest.classes.find(item => item.reference.digest === process.env.CLOD_CLASS_DIGEST).descriptor;
 const folder = descriptor.provides[0].modules.macos[0];
-const prefix = `components/${manifest.identity.name.split('/')[1]}/`;
-const modules = JSON.parse(process.env.AEPM_MODULE_MAP);
+const prefix = `components/${manifest.identity.name.slice(manifest.identity.name.lastIndexOf('/') + 1)}/`;
+const modules = JSON.parse(process.env.CLOD_MODULE_MAP);
 const files = Object.keys(modules).filter(path => path.startsWith(prefix + folder + '/') && path.endsWith('.swift')).sort().map(path => source(path.slice(prefix.length)));
 assert.ok(files.length > 0);
 const { themes } = await load('server/index.ts');

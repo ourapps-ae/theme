@@ -25,7 +25,7 @@ if (import.meta.main) {
   const targets: [string, string][] = [
     [join(option("--css", here), "theme.css"), out.css],
     [join(option("--swift", join(here, "../apple/Sources")), "ThemeTokens.swift"), out.swift],
-    [join(option("--kotlin", join(here, "../android/src/main/java/ae/theme")), "ThemeTokens.kt"), out.kotlin],
+    [join(option("--kotlin", join(here, "../android/src/main/java/com/clodhub/theme")), "ThemeTokens.kt"), out.kotlin],
   ];
   for (const [path, text] of targets) {
     mkdirSync(dirname(path), { recursive: true });

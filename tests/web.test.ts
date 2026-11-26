@@ -24,7 +24,7 @@ test("the shipped themes match the token schema", () => {
 test("the OpenRPC interface describes the token shape and the exported operations", async () => {
   const doc = JSON.parse(read("../interfaces/theme.json"));
   assert.equal(doc.openrpc, "1.3.2");
-  assert.deepEqual([doc.info.title, doc.info.version], ["ae/theme", "1.0.0"]);
+  assert.deepEqual([doc.info.title, doc.info.version], ["com.clodhub/theme", "1.0.0"]);
   const { Tokens, BackgroundStyle, Colour } = doc.components.schemas;
   const schema = JSON.parse(read("../implementation/web/tokens.schema.json"));
   assert.deepEqual(Tokens.required, schema.required);
@@ -88,7 +88,7 @@ test("generated CSS, Swift and Kotlin files are what the renderers produce", () 
   const out = buildAll(file);
   assert.equal(read("../implementation/web/theme.css"), out.css);
   assert.equal(read("../implementation/apple/Sources/ThemeTokens.swift"), out.swift);
-  assert.equal(read("../implementation/android/src/main/java/ae/theme/ThemeTokens.kt"), out.kotlin);
+  assert.equal(read("../implementation/android/src/main/java/com/clodhub/theme/ThemeTokens.kt"), out.kotlin);
   assert.match(renderSwift(file), /ThemeColour\(rgba: 0xE0B35AFF\)/);
   assert.match(renderKotlin(file), /primary = 0xFFE0B35AL/);
   assert.throws(() => buildAll({ ...file, themes: [{ ...night, colour: { ...night.colour, text: "x" } }] }), /text/);

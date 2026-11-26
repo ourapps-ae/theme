@@ -7,19 +7,19 @@
   "focus": "component",
   "definitions": [
     {
-      "id": "clodhub.theme",
+      "id": "com.clodhub.theme",
       "name": "Theme",
       "kind": "component",
       "status": "example",
-      "package": "clodhub/theme",
-      "version": "0.10.0",
+      "package": "pkg:clod/com.clodhub/theme",
+      "version": "0.11.0",
       "ports": [
         {
           "id": "theme",
           "name": "Theme",
           "direction": "output",
           "kind": "interface",
-          "type": "ae/theme",
+          "type": "com.clodhub/theme",
           "version": "1.0.0"
         }
       ],
@@ -60,7 +60,7 @@
           "name": "Theme",
           "direction": "input",
           "kind": "interface",
-          "type": "ae/theme",
+          "type": "com.clodhub/theme",
           "version": "1.0.0",
           "required": true,
           "cardinality": "one"
@@ -73,7 +73,7 @@
     {
       "id": "component",
       "name": "Theme",
-      "definition": "clodhub.theme",
+      "definition": "com.clodhub.theme",
       "configuration": {}
     },
     {

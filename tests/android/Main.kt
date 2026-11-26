@@ -1,4 +1,4 @@
-import ae.theme.*
+import com.clodhub.theme.*
 import java.io.File
 
 // Mirrors tests/apple/main.swift without a JSON library: token values are checked against the

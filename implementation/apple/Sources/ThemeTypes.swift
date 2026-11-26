@@ -16,7 +16,7 @@ struct ThemeColour: Equatable {
         alpha = Double(rgba & 0xFF) / 255
     }
 
-    // An installer colour: "hex e0b35a" (an aepm string setting cannot hold "#" and starts with a
+    // An installer colour: "hex e0b35a" (a clod string setting cannot hold "#" and starts with a
     // letter), "#rrggbb", "rrggbb", each optionally with two more digits of opacity; nil for anything else.
     static func setting(_ value: String) -> ThemeColour? {
         var text = value.trimmingCharacters(in: .whitespaces)

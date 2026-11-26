@@ -6,7 +6,7 @@
 Facilities: `theme` (Design tokens and animated background for web, Apple and Android clients).
 
 ## User inputs
-`themeName` selects a theme from `themes.json` (shipped: `night`, a dark room with a warm glow rising from below; `lounge`, a slower, softer look with the glow from above). An unknown name falls back to the default. `primaryColour` and `tableColour` are optional colours that replace the theme's primary (buttons, headings, highlights) and table (playing surface) colours; empty means the theme's own. An aepm string setting cannot hold `#` and must start with a letter, so a colour is written `hex e0b35a` (six digits, or eight with opacity); code may also pass `#e0b35a`. The settings are strings with the `label` grammar; a malformed colour is refused. Scene pictures and figures are supplied by the application at run time, not by this package.
+`themeName` selects a theme from `themes.json` (shipped: `night`, a dark room with a warm glow rising from below; `lounge`, a slower, softer look with the glow from above). An unknown name falls back to the default. `primaryColour` and `tableColour` are optional colours that replace the theme's primary (buttons, headings, highlights) and table (playing surface) colours; empty means the theme's own. A clod string setting cannot hold `#` and must start with a letter, so a colour is written `hex e0b35a` (six digits, or eight with opacity); code may also pass `#e0b35a`. The settings are strings with the `label` grammar; a malformed colour is refused. Scene pictures and figures are supplied by the application at run time, not by this package.
 
 - `themeName` (string, slug; optional; default `night`)
 - `primaryColour` (string, label; optional)
@@ -15,10 +15,10 @@ Facilities: `theme` (Design tokens and animated background for web, Apple and An
 ## Artefacts and dependencies
 `component.json` maps every `implementation/` source into `components/theme/`:
 
-- `implementation/android/src/main/java/ae/theme/BackgroundMath.kt` -> `components/theme/android/src/main/java/ae/theme/BackgroundMath.kt`
-- `implementation/android/src/main/java/ae/theme/ThemeBackground.kt` -> `components/theme/android/src/main/java/ae/theme/ThemeBackground.kt`
-- `implementation/android/src/main/java/ae/theme/ThemeTokens.kt` -> `components/theme/android/src/main/java/ae/theme/ThemeTokens.kt`
-- `implementation/android/src/main/java/ae/theme/ThemeTypes.kt` -> `components/theme/android/src/main/java/ae/theme/ThemeTypes.kt`
+- `implementation/android/src/main/java/com/clodhub/theme/BackgroundMath.kt` -> `components/theme/android/src/main/java/com/clodhub/theme/BackgroundMath.kt`
+- `implementation/android/src/main/java/com/clodhub/theme/ThemeBackground.kt` -> `components/theme/android/src/main/java/com/clodhub/theme/ThemeBackground.kt`
+- `implementation/android/src/main/java/com/clodhub/theme/ThemeTokens.kt` -> `components/theme/android/src/main/java/com/clodhub/theme/ThemeTokens.kt`
+- `implementation/android/src/main/java/com/clodhub/theme/ThemeTypes.kt` -> `components/theme/android/src/main/java/com/clodhub/theme/ThemeTypes.kt`
 - `implementation/apple/Sources/BackgroundMath.swift` -> `components/theme/apple/Sources/BackgroundMath.swift`
 - `implementation/apple/Sources/ThemeBackgroundView.swift` -> `components/theme/apple/Sources/ThemeBackgroundView.swift`
 - `implementation/apple/Sources/ThemeTokens.swift` -> `components/theme/apple/Sources/ThemeTokens.swift`
@@ -35,7 +35,7 @@ Dependencies: none.
 `tools.lock.json` pins verification tools: node 26.5, python3 3.12, swiftc 6.4, xcrun 72, kotlinc 2.2, java 26.0. Licence wording remains deferred.
 
 ## Provided interfaces
-- `interfaces/theme.json` defines `theme` (ae/theme) version 1.0.0 as an OpenRPC 1.3.2 document: one method per web function (`tokens.ts`, `background.ts`, `build-tokens.ts`), each description naming the Swift and Kotlin form, and the token shape (`Tokens`, `BackgroundStyle`, `ThemeFile`, `ThemeSettings`, the host views) as JSON Schema 2020-12 under `components.schemas`. Host views the shells read: `colourTable` (every colour name to `#rrggbb`, for web-host `themeColour` and `backgroundColour`), `accentColour` and Swift `ThemeSet.accent` (apple-host tint), `shellPalette` and Kotlin `ThemeSet.palette()` (android-host `ShellPalette`; the secondary colour is the table colour). Colours resolve first, so the host settings and the installer overrides agree.
+- `interfaces/theme.json` defines `theme` (com.clodhub/theme) version 1.0.0 as an OpenRPC 1.3.2 document: one method per web function (`tokens.ts`, `background.ts`, `build-tokens.ts`), each description naming the Swift and Kotlin form, and the token shape (`Tokens`, `BackgroundStyle`, `ThemeFile`, `ThemeSettings`, the host views) as JSON Schema 2020-12 under `components.schemas`. Host views the shells read: `colourTable` (every colour name to `#rrggbb`, for web-host `themeColour` and `backgroundColour`), `accentColour` and Swift `ThemeSet.accent` (apple-host tint), `shellPalette` and Kotlin `ThemeSet.palette()` (android-host `ShellPalette`; the secondary colour is the table colour). Colours resolve first, so the host settings and the installer overrides agree.
 
 ## Required interfaces
 None.

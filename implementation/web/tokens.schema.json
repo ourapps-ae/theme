@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "ae/theme-tokens/1.0.0",
+  "$id": "com.clodhub/theme-tokens/1.0.0",
   "title": "Design tokens for one theme",
   "type": "object",
   "additionalProperties": false,

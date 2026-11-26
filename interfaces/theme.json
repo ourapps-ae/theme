@@ -1,9 +1,9 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/theme",
+    "title": "com.clodhub/theme",
     "version": "1.0.0",
-    "description": "Design tokens for colours, spacing, radii, type scale and an animated background, rendered to CSS variables, Swift constants and Kotlin constants. Web: implementation/web/tokens.ts and background.ts. Apple: ThemeTypes.swift, ThemeTokens.swift, BackgroundMath.swift, ThemeBackgroundView.swift. Android: package ae.theme."
+    "description": "Design tokens for colours, spacing, radii, type scale and an animated background, rendered to CSS variables, Swift constants and Kotlin constants. Web: implementation/web/tokens.ts and background.ts. Apple: ThemeTypes.swift, ThemeTokens.swift, BackgroundMath.swift, ThemeBackgroundView.swift. Android: package com.clodhub.theme."
   },
   "methods": [
     {
@@ -842,7 +842,7 @@
       "ColourSetting": {
         "type": "string",
         "pattern": "^\\s*([hH][eE][xX]\\s+)?#?[0-9a-fA-F]{6}([0-9a-fA-F]{2})?\\s*$",
-        "description": "An installer colour: 'hex rrggbb' or 'hex rrggbbaa' (an aepm string setting cannot hold '#' and starts with a letter); '#rrggbb' and 'rrggbb' are accepted too."
+        "description": "An installer colour: 'hex rrggbb' or 'hex rrggbbaa' (a clod string setting cannot hold '#' and starts with a letter); '#rrggbb' and 'rrggbb' are accepted too."
       },
       "ColourName": {
         "type": "string",
